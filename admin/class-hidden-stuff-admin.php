@@ -118,7 +118,29 @@ class hidden_Stuff_Admin {
 	}
 
 	public function hidden_stuff_menu_options() {
-		
+		//$tabs = $this->settings->rmwp_get_tabs();
 
+    // Check user capabilities
+     if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+     }
+?>
+<div class="wrap">
+    <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+     
+    <h2 class="nav-tab-wrapper">
+    </h2>
+            <p id="<?php echo esc_attr( $args['id'] ); ?>">
+                Please follow the example of shortcode setting below.
+            </p>
+            <hr />
+            <p id="<?php echo esc_attr( $args['id'] ); ?>-2">
+                <strong style="font-size: 14px">Shortcode</strong><br/>
+                [show-content][hide-content]
+            </p>
+            
+            <hr />
+</div>
+<?php
 	}
 }

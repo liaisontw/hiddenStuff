@@ -68,7 +68,7 @@ class hidden_Stuff {
 	 */
 	public function __construct() {
 		if ( defined( 'HIDDEN_STUFF_VERSION' ) ) {
-			$this->version = hidden_STUFF_VERSION;
+			$this->version = HIDDEN_STUFF_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
