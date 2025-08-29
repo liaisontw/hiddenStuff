@@ -29,4 +29,16 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	
+
 })( jQuery );
+
+// Define the onclick action event.
+function myFunction() {
+	var x = document.getElementById("myDIV");
+	if (x.style.display === "none") {
+	  x.style.display = "block";
+	} else {
+	  x.style.display = "none";
+	}
+}

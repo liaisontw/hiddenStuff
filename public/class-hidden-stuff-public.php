@@ -51,7 +51,7 @@ class hidden_Stuff_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+        add_action( 'plugins_loaded', array($this, 'init_hidden_stuff') );
 	}
 
 	/**
@@ -101,9 +101,37 @@ class hidden_Stuff_Public {
 	}
 
 	public function init_hidden_stuff() {
-		
+        add_shortcode( 'show-content', array($this, 'hidden_stuff_show_content') );
+        add_shortcode( 'hide-content', array($this, 'hidden_stuff_hide_content') );
 	}
 
-	
-	
+	/**
+     * [show-content]
+     *
+     * @since    1.0.0
+     */
+    function hidden_stuff_show_content() {
+		$output  = '<button onclick="myFunction()">Click Me</button>';
+		$output .= '<div id="myDIV" style="display: none;">';
+		// Return the output.
+        return $output;
+	}
+
+	/**
+     * [hide-content]
+     *
+     * @since    1.0.0
+     */
+    function hidden_stuff_hide_content() {
+        // If the current inline variable is true, change from the opening element from div to span.
+        
+        // Set the closing element.
+		//$output = "</span>";
+        $output = "</div>";
+        // Return the output.
+        return $output;
+    }
+
 }
+
+
