@@ -111,8 +111,20 @@ class hidden_Stuff_Public {
      * @since    1.0.0
      */
     function hidden_stuff_show_content() {
-		$output  = '<button onclick="myFunction()">Click Me</button>';
-		$output .= '<div id="myDIV" style="display: none;">';
+		// Construct the output elements.
+		//$output = '<button name="hidden-show" type="button" onclick="hiddenShowToggle()">Hide Show</button>';
+		//$buttonFunction = "hiddenShowToggle()";
+		//$button = '<button name="hidden-show" type="button" onclick="' . $buttonFunction . '">';
+		$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle()">';
+		$button .= 'Hide Show';
+		$button .= '</button>';
+		//$output = '<span class="hidden-show" id="hidden-show' . $id . '" style="display: none;">';
+		//$output = '<span class="hidden-show" id="hidden-show">';
+		$output = '<span class="example-2" id="hidden-show">';
+		$output .= $button;
+		$output .= '</span>';
+		$output .= '<div id="hiddenShowDiv" style="display: none;">';
+		
 		// Return the output.
         return $output;
 	}

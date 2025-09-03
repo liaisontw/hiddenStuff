@@ -29,13 +29,21 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-	
+	// Check if the document is ready.
+    $( function() {
+
+        // For each "read more" element, i.e., review...
+        $( ".hidden-show" ).each( function(){
+            // Display the Read More button.
+            $( this ).show();
+        });
+    });
 
 })( jQuery );
 
 // Define the onclick action event.
-function myFunction() {
-	var x = document.getElementById("myDIV");
+function hiddenShowToggle() {
+	var x = document.getElementById("hiddenShowDiv");
 	if (x.style.display === "none") {
 	  x.style.display = "block";
 	} else {
