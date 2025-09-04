@@ -122,12 +122,12 @@ class hidden_Stuff_Admin {
 		if ( current_user_can( 'manage_options' ) ) {
 			if (   isset($_POST[ 'hidden_stuff_submit_hidden' ]) 
 			&& $_POST[ 'hidden_stuff_submit_hidden' ] == 'Y' ) { 
-				// if (   isset($_POST['hidden_stuff_nonce'])
-				// 	&& wp_verify_nonce( 
-				// 		sanitize_text_field(wp_unslash($_POST['hidden_stuff_nonce'])),
-				// 		'hidden-stuff-nonce' 
-				// 	) 
-				// ) {
+				 if (   isset($_POST['hidden_stuff_nonce'])
+					&& wp_verify_nonce( 
+						sanitize_text_field(wp_unslash($_POST['hidden_stuff_nonce'])),
+						'hidden-stuff-nonce' 
+					) 
+				) {
 					if ( isset($_POST[ 'hidden_stuff_button_type' ]) ) {
 						$hidden_stuff_button_type = filter_var( 
 							wp_unslash($_POST[ 'hidden_stuff_button_type' ]), 
@@ -139,9 +139,9 @@ class hidden_Stuff_Admin {
 					update_option('hidden_stuff_button_type', $hidden_stuff_button_type);
 					echo '<div class="updated"><p><strong>' . esc_html('Settings saved.') .$hidden_stuff_button_type. '</strong></p></div>';
 				}
-			// } else {
-			// 	wp_die(esc_html('Form failed nonce verification.'));   
-			// }
+			} else {
+				wp_die(esc_html('Form failed nonce verification.'));   
+			}
 		}
 ?>
 
@@ -170,7 +170,6 @@ class hidden_Stuff_Admin {
 				$button .= '</button>';					
 				$output = '<p><span class="hidden-show-'.$i.'"';
 				$output .= '" id="hidden-show">';
-				//$output .= '<input type="radio" id="" name="buttonType" value="" />';
 				$output .= '<input type="radio" id="buttonType-'.$i;
 				$output .= '" name="hidden_stuff_button_type" value="'.$i;
 				if ($i == $hidden_stuff_button_type) {
