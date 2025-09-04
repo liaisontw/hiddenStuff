@@ -112,19 +112,20 @@ class hidden_Stuff_Public {
      */
     function hidden_stuff_show_content() {
 		// Construct the output elements.
-		//$output = '<button name="hidden-show" type="button" onclick="hiddenShowToggle()">Hide Show</button>';
-		//$buttonFunction = "hiddenShowToggle()";
-		//$button = '<button name="hidden-show" type="button" onclick="' . $buttonFunction . '">';
+		// $hiddenShowDivId = rand();
+		// $buttonAction = "hiddenShowToggle( {$hiddenShowDivId} )";
+		// $button = '<button name="hidden-show" type="button" onclick="'.$buttonAction.'">';
 		$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle()">';
 		$button .= 'Hide Show';
 		$button .= '</button>';
-		//$output = '<span class="hidden-show" id="hidden-show' . $id . '" style="display: none;">';
-		//$output = '<span class="hidden-show" id="hidden-show">';
-		$output = '<span class="hidden-show-3" id="hidden-show">';
+		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
+		$output = '<span class="hidden-show-'.$hidden_stuff_button_type;
+		$output .= '" id="hidden-show" >';
 		$output .= $button;
 		$output .= '</span>';
-		$output .= '<div id="hiddenShowDiv" style="display: none;">';
-		
+		//$output .= '<div id="hiddenShowDiv-"'.$hiddenShowDivId ;
+		$output .= '<div id="hiddenShowDiv"';
+		$output .= 'style="display: none;">';
 		// Return the output.
         return $output;
 	}
@@ -135,12 +136,8 @@ class hidden_Stuff_Public {
      * @since    1.0.0
      */
     function hidden_stuff_hide_content() {
-        // If the current inline variable is true, change from the opening element from div to span.
-        
         // Set the closing element.
-		//$output = "</span>";
         $output = "</div>";
-        // Return the output.
         return $output;
     }
 

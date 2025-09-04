@@ -42,8 +42,12 @@
 })( jQuery );
 
 // Define the onclick action event.
-function hiddenShowToggle() {
+function hiddenShowToggle($hiddenShowDivId) {
+	
+	//var x = document.getElementById("hiddenShowDiv-"+$hiddenShowDivId);
 	var x = document.getElementById("hiddenShowDiv");
+	//var divId = 'hiddenShowDiv-' + $hiddenShowDivId;
+	//var x = document.getElementById(divId);
 	if (x.style.display === "none") {
 	  x.style.display = "block";
 	} else {
