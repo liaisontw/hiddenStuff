@@ -142,30 +142,16 @@ class hidden_Stuff_Admin {
             </p>
             <hr />
 			<?php 
-				$button = '<button name="hidden-show" type="button">';
-				$button .= 'Hide Show';
-				$button .= '</button>';	
-	 			$buttonSelected = "hidden-show-1";
-				$output = '<span class="';
-				$output .= $buttonSelected;
-				$output .= '" id="hidden-show">';
-				$output .= $button;
-				$output .= '</span>';
-				echo "<p>" . $output . "</p>"; 
-				$buttonSelected = "hidden-show-2";
-				$output = '<span class="';
-				$output .= $buttonSelected;
-				$output .= '" id="hidden-show">';
-				$output .= $button;
-				$output .= '</span>';
-				echo "<p>" . $output . "</p>"; 
-				$buttonSelected = "hidden-show-3";
-				$output = '<span class="';
-				$output .= $buttonSelected;
-				$output .= '" id="hidden-show">';
-				$output .= $button;
-				$output .= '</span>';
-				echo "<p>" . $output . "</p>"; 
+				for ($i=1; $i<4; $i++) {
+					$button = '<button name="hidden-show" type="button">';
+					$button .= 'Hide Show';
+					$button .= '</button>';	
+					$output = '<p><span class="hidden-show-'.$i.'"';
+					$output .= '" id="hidden-show">';
+					$output .= $button;
+					$output .= '</span></p>';
+					echo $output; 
+				}
 			?>            
 </div>
 <?php
