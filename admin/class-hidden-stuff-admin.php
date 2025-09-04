@@ -125,35 +125,47 @@ class hidden_Stuff_Admin {
         return;
      }
 ?>
-<div class="wrap">
-    <h1><?php 
-		echo esc_html( get_admin_page_title() ); 
-	?></h1>
-     
-    <h2 class="nav-tab-wrapper">
-    </h2>
-            <p>
-                Please follow the example of shortcode setting below.
-            </p>
-            <hr />
-            <p>
-                <strong style="font-size: 14px">Shortcode</strong><br/>
-                [show-content][hide-content]
-            </p>
-            <hr />
-			<?php 
-				for ($i=1; $i<4; $i++) {
-					$button = '<button name="hidden-show" type="button">';
-					$button .= 'Hide Show';
-					$button .= '</button>';	
-					$output = '<p><span class="hidden-show-'.$i.'"';
-					$output .= '" id="hidden-show">';
-					$output .= $button;
-					$output .= '</span></p>';
-					echo $output; 
+
+<div class="wrap" id="hidden_stuff">
+    <h1><?php echo esc_html( get_admin_page_title() ); 	?></h1>
+    <h2 class="nav-tab-wrapper"> </h2>
+		<p>
+			Please follow the example of shortcode setting below.
+		</p>
+		<hr />
+		<p>
+			<strong style="font-size: 14px">Shortcode</strong><br/>
+			[show-content][hide-content]
+		</p>
+		<hr />
+		<form name="form1" method="post" action="">
+		<input type="hidden" name="hidden_stuff_nonce" value="<?php echo esc_html(wp_create_nonce('hidden-stuff-nonce')); ?>">
+		<input type="hidden" name="hidden_stuff_submit_hidden" value="Y">
+		<table border="1" class="form-table" >
+		<tbody>
+		<?php 
+			for ($i=1; $i<4; $i++) {
+				$button = '<button name="hidden-show" type="button">';
+				$button .= 'Hide Show';
+				$button .= '</button>';					
+				$output = '<p><span class="hidden-show-'.$i.'"';
+				$output .= '" id="hidden-show">';
+				if (1==$i) {
+					$output .= '<input type="radio" id="" name="buttonType" value="" checked/>';
+				} else {
+					$output .= '<input type="radio" id="" name="buttonType" value="" />';
 				}
-			?>            
-</div>
+				$output .= '<label for="">';
+				$output .= $button;
+				$output .= '</label></span></p>';
+				echo $output; 
+			}
+		?>  
+		<p class="submit">
+			<input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'hidden-stuff') ?>" />
+		</p>       
+		</form>   
+	</div>
 <?php
 	}
 }
