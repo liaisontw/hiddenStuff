@@ -120,7 +120,7 @@ class hidden_Stuff_Public {
 		$button .= '</button>';
 		//$output = '<span class="hidden-show" id="hidden-show' . $id . '" style="display: none;">';
 		//$output = '<span class="hidden-show" id="hidden-show">';
-		$output = '<span class="example-2" id="hidden-show">';
+		$output = '<span class="hidden-show-3" id="hidden-show">';
 		$output .= $button;
 		$output .= '</span>';
 		$output .= '<div id="hiddenShowDiv" style="display: none;">';

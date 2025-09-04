@@ -126,20 +126,47 @@ class hidden_Stuff_Admin {
      }
 ?>
 <div class="wrap">
-    <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+    <h1><?php 
+		echo esc_html( get_admin_page_title() ); 
+	?></h1>
      
     <h2 class="nav-tab-wrapper">
     </h2>
-            <p id="<?php echo esc_attr( $args['id'] ); ?>">
+            <p>
                 Please follow the example of shortcode setting below.
             </p>
             <hr />
-            <p id="<?php echo esc_attr( $args['id'] ); ?>-2">
+            <p>
                 <strong style="font-size: 14px">Shortcode</strong><br/>
                 [show-content][hide-content]
             </p>
-            
             <hr />
+			<?php 
+				$button = '<button name="hidden-show" type="button">';
+				$button .= 'Hide Show';
+				$button .= '</button>';	
+	 			$buttonSelected = "hidden-show-1";
+				$output = '<span class="';
+				$output .= $buttonSelected;
+				$output .= '" id="hidden-show">';
+				$output .= $button;
+				$output .= '</span>';
+				echo "<p>" . $output . "</p>"; 
+				$buttonSelected = "hidden-show-2";
+				$output = '<span class="';
+				$output .= $buttonSelected;
+				$output .= '" id="hidden-show">';
+				$output .= $button;
+				$output .= '</span>';
+				echo "<p>" . $output . "</p>"; 
+				$buttonSelected = "hidden-show-3";
+				$output = '<span class="';
+				$output .= $buttonSelected;
+				$output .= '" id="hidden-show">';
+				$output .= $button;
+				$output .= '</span>';
+				echo "<p>" . $output . "</p>"; 
+			?>            
 </div>
 <?php
 	}
