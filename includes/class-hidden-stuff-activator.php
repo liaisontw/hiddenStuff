@@ -31,8 +31,9 @@ class hidden_Stuff_Activator {
 	 */
 	public static function activate() {
 		add_option( 'hidden_stuff_active', 'yes' );
-		add_option( 'hidden_stuff_hidden_text', 'Read More' );
-		add_option( 'hidden_stuff_hidden_padding', '..' );
+		add_option( 'hidden_stuff_text', 'Hide Show' );
+		add_option( 'hidden_stuff_padding', '..' );
+		add_option( 'hidden_stuff_button_type', '1' );
 	}
 
 }
