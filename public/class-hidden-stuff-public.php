@@ -112,20 +112,24 @@ class hidden_Stuff_Public {
      */
     function hidden_stuff_show_content() {
 		// Construct the output elements.
-		// $hiddenShowDivId = rand();
+		 $hiddenShowDivId = rand();
+		//$hiddenShowDivId = 100;
 		// $buttonAction = "hiddenShowToggle( {$hiddenShowDivId} )";
-		// $button = '<button name="hidden-show" type="button" onclick="'.$buttonAction.'">';
-		$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle()">';
+		//$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle(1)">';
+		$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle(';
+		$button .= $hiddenShowDivId;
+		$button .= ')">';
 		$button .= 'Hide Show';
 		$button .= '</button>';
 		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
-		$output = '<span class="hidden-show-'.$hidden_stuff_button_type;
-		$output .= '" id="hidden-show" >';
+		$output = '<span class="hidden-show-'.$hidden_stuff_button_type.'"';
+		$output .= ' id="hidden-show-wrap">';
 		$output .= $button;
 		$output .= '</span>';
-		//$output .= '<div id="hiddenShowDiv-"'.$hiddenShowDivId ;
-		$output .= '<div id="hiddenShowDiv"';
-		$output .= 'style="display: none;">';
+		//$output .= '<div id="hiddenShowDiv" style="display: none">';
+		//$output .= '<div id="hiddenShowDiv-5" style="display: none">';
+		$output .= '<div id="hiddenShowDiv-'.$hiddenShowDivId.'" style="display: none">';
+
 		// Return the output.
         return $output;
 	}
@@ -137,7 +141,8 @@ class hidden_Stuff_Public {
      */
     function hidden_stuff_hide_content() {
         // Set the closing element.
-        $output = "</div>";
+		$output = "</div><div class='hidden-show-wrap-end' id='hidden-show-wrap-end'></div>";
+
         return $output;
     }
 
