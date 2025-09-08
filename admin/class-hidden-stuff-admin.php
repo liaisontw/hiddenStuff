@@ -117,17 +117,29 @@ class hidden_Stuff_Admin {
 		);
 	}
 
-	public function hidden_stuff_menu_options() {
-    // Check user capabilities
+	public function hidden_stuff_menu_options() 
+	{
+		$hidden_stuff_active      = get_option( 'hidden_stuff_active' );
+		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
+		$hidden_stuff_padding     = get_option( 'hidden_stuff_padding' );
+		$hidden_stuff_button_type = get_option( 'hidden_stuff_button_type' );
+		if ( !$hidden_stuff_active      ) $hidden_stuff_active      = 'yes';
+		if ( !$hidden_stuff_text        ) $hidden_stuff_text        = 'Hide Show';
+		if ( !$hidden_stuff_padding     ) $hidden_stuff_padding     = '..';
+		if ( !$hidden_stuff_button_type ) $hidden_stuff_button_type = '1';
+
+		// Check user capabilities
 		if ( current_user_can( 'manage_options' ) ) {
 			if (   isset($_POST[ 'hidden_stuff_submit_hidden' ]) 
-			&& $_POST[ 'hidden_stuff_submit_hidden' ] == 'Y' ) { 
-				 if (   isset($_POST['hidden_stuff_nonce'])
+			&& $_POST[ 'hidden_stuff_submit_hidden' ] == 'Y' ) 
+			{ 
+				if (   isset($_POST['hidden_stuff_nonce'])
 					&& wp_verify_nonce( 
 						sanitize_text_field(wp_unslash($_POST['hidden_stuff_nonce'])),
 						'hidden-stuff-nonce' 
 					) 
-				) {
+				) 
+				{
 					if ( isset($_POST[ 'hidden_stuff_button_type' ]) ) {
 						$hidden_stuff_button_type = filter_var( 
 							wp_unslash($_POST[ 'hidden_stuff_button_type' ]), 
@@ -139,15 +151,15 @@ class hidden_Stuff_Admin {
 					update_option('hidden_stuff_button_type', $hidden_stuff_button_type);
 					echo '<div class="updated"><p><strong>' . esc_html('Settings saved.') .$hidden_stuff_button_type. '</strong></p></div>';
 				}
-			} else {
-				wp_die(esc_html('Form failed nonce verification.'));   
-			}
+				else {
+					wp_die(esc_html('Form failed nonce verification.'));   
+				}
+			} 
 		}
 ?>
 
 <div class="wrap" id="hidden_stuff">
-    <h1><?php echo esc_html( get_admin_page_title() ); 	?></h1>
-    <h2 class="nav-tab-wrapper"> </h2>
+	<h2>Hidden Stuff Settings</h2>
 		<p>
 			Please follow the example of shortcode setting below.
 		</p>
