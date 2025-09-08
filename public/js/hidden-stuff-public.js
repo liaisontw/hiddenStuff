@@ -36,8 +36,7 @@
 function hiddenShowToggle(hiddenShowDivId) {
 	
 	var x = document.getElementById('hiddenShowDiv-' + hiddenShowDivId);
-	//var divId = 'hiddenShowDiv-' + $hiddenShowDivId;
-	//var x = document.getElementById(divId);
+	
 	if (x.style.display === "none") {
 	  	x.style.display = "block";
 		var insertedContent = document.querySelector(".insertedContent");
@@ -46,8 +45,6 @@ function hiddenShowToggle(hiddenShowDivId) {
 		}
 	} else {
 	  	x.style.display = "none";
-		//var y = document.getElementById("hidden-show-wrap-end");
-		//y.appendChild('#hidden-show-wrap');
 		var y = x.nextElementSibling;
 
 		if (y) {

@@ -116,7 +116,7 @@ class hidden_Stuff_Public {
 		$button = '<button name="hidden-show" type="button" onclick="hiddenShowToggle(';
 		$button .= $hiddenShowDivId;
 		$button .= ')">';
-		$button .= 'Hide Show';
+		$button .= 'Show';
 		$button .= '</button>';
 		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
 		$output = '<span class="hidden-show-'.$hidden_stuff_button_type.'"';

@@ -177,8 +177,11 @@ class hidden_Stuff_Admin {
 		<?php 
 			$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
 			for ($i=1; $i<4; $i++) {
-				$button = '<button name="hidden-show" type="button">';
-				$button .= 'Hide Show';
+				$button = '<button name="button-show" type="button">';
+				$button .= 'Show';
+				$button .= '</button>';					
+				$button .= '<button name="button-hide" type="button">';
+				$button .= 'Hide';
 				$button .= '</button>';					
 				$output = '<p><span class="hidden-show-'.$i.'"';
 				$output .= '" id="hidden-show">';
