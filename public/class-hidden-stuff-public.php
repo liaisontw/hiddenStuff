@@ -116,7 +116,8 @@ class hidden_Stuff_Public {
 		//$button .= 'id="button-'.$hiddenShowDivId.')">';
 		//$button .= 'onclick="hiddenShowToggle()">';
 		$button = '<button name="hidden-show" type="button" ';
-		$button .= 'onclick="hiddenShowToggle('.$hiddenShowDivId.')">';
+		$button .= 'onclick="hiddenShowToggle('.$hiddenShowDivId;
+		$button .= ')" id="button-'.$hiddenShowDivId.'">';
 		$button .= 'Show';
 		$button .= '</button>';
 		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
