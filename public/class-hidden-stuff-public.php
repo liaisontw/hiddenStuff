@@ -112,13 +112,18 @@ class hidden_Stuff_Public {
      */
     function hidden_stuff_show_content() {
 		// Construct the output elements.
+		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
+		$button_text = explode(' ', $hidden_stuff_text);
+		$show_content = $button_text[0];
+
 		$hiddenShowDivId = rand();
 		//$button .= 'id="button-'.$hiddenShowDivId.')">';
 		//$button .= 'onclick="hiddenShowToggle()">';
 		$button = '<button name="hidden-show" type="button" ';
 		$button .= 'onclick="hiddenShowToggle('.$hiddenShowDivId;
 		$button .= ')" id="button-'.$hiddenShowDivId.'">';
-		$button .= 'Show';
+		//$button .= 'Show';
+		$button .= $show_content;
 		$button .= '</button>';
 		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
 		$output = '<span class="hidden-show-'.$hidden_stuff_button_type.'"';

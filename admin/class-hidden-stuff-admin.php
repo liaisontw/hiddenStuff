@@ -123,7 +123,7 @@ class hidden_Stuff_Admin {
 		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
 		$hidden_stuff_button_type = get_option( 'hidden_stuff_button_type' );
 		if ( !$hidden_stuff_active      ) $hidden_stuff_active      = 'yes';
-		if ( !$hidden_stuff_text        ) $hidden_stuff_text        = 'Hide Show';
+		if ( !$hidden_stuff_text        ) $hidden_stuff_text        = 'Show Hide';
 		if ( !$hidden_stuff_button_type ) $hidden_stuff_button_type = '1';
 
 		// Check user capabilities
@@ -147,12 +147,52 @@ class hidden_Stuff_Admin {
 						$hidden_stuff_button_type = '1';
 					}
 					update_option('hidden_stuff_button_type', $hidden_stuff_button_type);
-					echo '<div class="updated"><p><strong>' . esc_html('Settings saved.') .$hidden_stuff_button_type. '</strong></p></div>';
+					//echo '<div class="updated"><p><strong>' . esc_html('Settings saved.') .$hidden_stuff_button_type. '</strong></p></div>';
+
+					if ( isset($_POST[ 'hidden_stuff_text' ]) ) {
+						$hidden_stuff_text = filter_var( 
+							wp_unslash($_POST[ 'hidden_stuff_text' ]), 
+							FILTER_SANITIZE_FULL_SPECIAL_CHARS 
+						); 
+					} else {
+						$hidden_stuff_text = 'Show Hide';
+					}
+					update_option('hidden_stuff_text', $hidden_stuff_text);
 				}
 				else {
 					wp_die(esc_html('Form failed nonce verification.'));   
 				}
 			} 
+		}
+
+		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
+		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
+		$button_text = explode(' ', $hidden_stuff_text);
+		$show_content = $button_text[0];
+		$hide_content = $button_text[1];
+		$output = '';
+		for ($i=1; $i<4; $i++) {
+			$button = '<button name="button-show" type="button">';
+			//$button .= 'Show';
+			$button .= $show_content;
+			$button .= '</button>';					
+			$button .= '<button name="button-hide" type="button">';
+			//$button .= 'Hide';
+			$button .= $hide_content;
+			$button .= '</button>';					
+			$output .= '<p><span class="hidden-show-'.$i.'"';
+			$output .= '" id="hidden-show">';
+			$output .= '<input type="radio" id="buttonType-'.$i;
+			$output .= '" name="hidden_stuff_button_type" value="'.$i;
+			if ($i == $hidden_stuff_button_type) {
+				$output .= '" checked/>';
+			} else {
+				$output .= '" />';
+			}
+			$output .= '<label for="">';
+			$output .= $button;
+			$output .= '</label></span></p>';
+			//echo $output; 
 		}
 ?>
 
@@ -164,41 +204,26 @@ class hidden_Stuff_Admin {
 		<hr />
 		<p>
 			<strong style="font-size: 14px">Shortcode</strong><br/>
-			[show-content][hide-content]
+			[show-content] The content to be hidden dynamically [hide-content]
 		</p>
-		<hr />
+		<hr />		
 		<form name="form1" method="post" action="">
-		<input type="hidden" name="hidden_stuff_nonce" value="<?php echo esc_html(wp_create_nonce('hidden-stuff-nonce')); ?>">
-		<input type="hidden" name="hidden_stuff_submit_hidden" value="Y">
-		<table border="1" class="form-table" >
-		<tbody>
-		<?php 
-			$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
-			for ($i=1; $i<4; $i++) {
-				$button = '<button name="button-show" type="button">';
-				$button .= 'Show';
-				$button .= '</button>';					
-				$button .= '<button name="button-hide" type="button">';
-				$button .= 'Hide';
-				$button .= '</button>';					
-				$output = '<p><span class="hidden-show-'.$i.'"';
-				$output .= '" id="hidden-show">';
-				$output .= '<input type="radio" id="buttonType-'.$i;
-				$output .= '" name="hidden_stuff_button_type" value="'.$i;
-				if ($i == $hidden_stuff_button_type) {
-					$output .= '" checked/>';
-				} else {
-					$output .= '" />';
-				}
-				$output .= '<label for="">';
-				$output .= $button;
-				$output .= '</label></span></p>';
-				echo $output; 
-			}
-		?>  
-		<p class="submit">
-			<input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'hidden-stuff') ?>" />
-		</p>       
+			<input type="hidden" name="hidden_stuff_nonce" value="<?php echo esc_html(wp_create_nonce('hidden-stuff-nonce')); ?>">
+			<input type="hidden" name="hidden_stuff_submit_hidden" value="Y">
+			<table border="1" class="form-table" >
+			
+			
+			<?php echo $output; ?>
+
+			<?php esc_html_e( "Button Text", 'hidden-stuff' ); ?>
+			<select id="hidden_stuff_text" name="hidden_stuff_text">
+				<option value="Show Hide" <?php echo ($hidden_stuff_text=='Show Hide' ? 'selected' : ''); ?> >Show Hide</option>
+				<option value="More Less" <?php echo ($hidden_stuff_text=='More Less' ? 'selected' : ''); ?> >More Less</option>
+			</select>
+			<p class="submit">
+				<input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'hidden-stuff') ?>" />
+			</p> 
+		
 		</form>   
 	</div>
 <?php

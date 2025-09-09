@@ -39,14 +39,28 @@ function hiddenShowToggle(hiddenShowDivId) {
 	
 	if (x.style.display === "none") {
 	  	x.style.display = "block";
-		
+		const button = document.getElementById('button-' + hiddenShowDivId);
+		if ('Show' == button.textContent) {
+			button.textContent = "Hide";
+		}
+		else if ('More' == button.textContent) {
+			button.textContent = "Less";
+		}
+
 		// var insertedContent = document.querySelector(".insertedContent");
 		// if(insertedContent) {
 		// 	insertedContent.parentNode.removeChild(insertedContent);
 		// }
 	} else {
 	  	x.style.display = "none";
-		
+		const button = document.getElementById('button-' + hiddenShowDivId);
+		if ('Hide' == button.textContent) {
+			button.textContent = "Show";
+		}
+		else if ('Less' == button.textContent) {
+			button.textContent = "More";
+		}
+
 		// var y = x.nextElementSibling;
 		// if (y) {
 		// 	// Using insertAdjacentHTML for HTML strings
