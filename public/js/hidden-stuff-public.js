@@ -34,22 +34,23 @@
 
 // Define the onclick action event.
 function hiddenShowToggle(hiddenShowDivId) {
-	
 	var x = document.getElementById('hiddenShowDiv-' + hiddenShowDivId);
+	//var x = document.getElementById('hiddenShowDiv');
 	
 	if (x.style.display === "none") {
 	  	x.style.display = "block";
-		var insertedContent = document.querySelector(".insertedContent");
-		if(insertedContent) {
-			insertedContent.parentNode.removeChild(insertedContent);
-		}
+		
+		// var insertedContent = document.querySelector(".insertedContent");
+		// if(insertedContent) {
+		// 	insertedContent.parentNode.removeChild(insertedContent);
+		// }
 	} else {
 	  	x.style.display = "none";
-		var y = x.nextElementSibling;
-
-		if (y) {
-			// Using insertAdjacentHTML for HTML strings
-    		y.insertAdjacentHTML('beforeend', '<span class ="insertedContent">Appended content to next sibling</span>');
-		}    
+		
+		// var y = x.nextElementSibling;
+		// if (y) {
+		// 	// Using insertAdjacentHTML for HTML strings
+    	// 	y.insertAdjacentHTML('beforeend', '<span class ="insertedContent">Appended content to next sibling</span>');
+		// }    
 	}
 }

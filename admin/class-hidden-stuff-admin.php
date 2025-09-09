@@ -121,11 +121,9 @@ class hidden_Stuff_Admin {
 	{
 		$hidden_stuff_active      = get_option( 'hidden_stuff_active' );
 		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
-		$hidden_stuff_padding     = get_option( 'hidden_stuff_padding' );
 		$hidden_stuff_button_type = get_option( 'hidden_stuff_button_type' );
 		if ( !$hidden_stuff_active      ) $hidden_stuff_active      = 'yes';
 		if ( !$hidden_stuff_text        ) $hidden_stuff_text        = 'Hide Show';
-		if ( !$hidden_stuff_padding     ) $hidden_stuff_padding     = '..';
 		if ( !$hidden_stuff_button_type ) $hidden_stuff_button_type = '1';
 
 		// Check user capabilities
