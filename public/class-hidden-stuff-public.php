@@ -116,7 +116,7 @@ class hidden_Stuff_Public {
 		$button_text = explode(' ', $hidden_stuff_text);
 		$show_content = $button_text[0];
 
-		$hiddenShowDivId = rand();
+		$hiddenShowDivId = wp_rand();
 		//$button .= 'id="button-'.$hiddenShowDivId.')">';
 		//$button .= 'onclick="hiddenShowToggle()">';
 		$button = '<button name="hidden-show" type="button" ';

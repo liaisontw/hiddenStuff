@@ -10,10 +10,10 @@
  *
  * @link              https://github.com/liaisontw
  * @since             1.0.0
- * @package           Hidden_Stuff
+ * @package           hidden_Stuff
  *
  * @wordpress-plugin
- * Plugin Name:       Hidden Stuff
+ * Plugin Name:       hidden Stuff
  * Plugin URI:        https://github.com/liaisontw/hiddenstuff
  * Description:       This is a description of the plugin.
  * Version:           1.0.0

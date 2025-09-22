@@ -181,7 +181,7 @@ class hidden_Stuff_Admin {
 			$button .= $hide_content;
 			$button .= '</button>';					
 			$output .= '<p><span class="hidden-show-'.$i.'"';
-			$output .= '" id="hidden-show">';
+			$output .= ' id="hidden-show">';
 			$output .= '<input type="radio" id="buttonType-'.$i;
 			$output .= '" name="hidden_stuff_button_type" value="'.$i;
 			if ($i == $hidden_stuff_button_type) {
@@ -189,15 +189,15 @@ class hidden_Stuff_Admin {
 			} else {
 				$output .= '" />';
 			}
-			$output .= '<label for="">';
+			//$output .= '<label for="">';
 			$output .= $button;
-			$output .= '</label></span></p>';
-			//echo $output; 
+			//$output .= '</label></span></p>';
+			$output .= '</span></p>';
 		}
 ?>
 
 <div class="wrap" id="hidden_stuff">
-	<h2>Hidden Stuff Settings</h2>
+	<h2>hidden Stuff Settings</h2>
 		<p>
 			Please follow the example of shortcode setting below.
 		</p>
@@ -212,8 +212,37 @@ class hidden_Stuff_Admin {
 			<input type="hidden" name="hidden_stuff_submit_hidden" value="Y">
 			<table border="1" class="form-table" >
 			
+			<?php 
+				//echo ( $output ); 
+			?>
 			
-			<?php echo $output; ?>
+			<?php 
+				for ($i=1; $i<4; $i++) {				
+			?>		
+			<p>
+				<span class="hidden-show-<?php echo esc_attr( $i );?>" id="hidden-show">
+				<input type="radio" id="buttonType-<?php echo esc_attr($i);?>"	
+					name="hidden_stuff_button_type" value="
+					<?php
+						if ($i == $hidden_stuff_button_type) {
+							echo esc_html('" checked/>');
+						} else {
+							echo esc_html('" />');
+						}
+					?>
+				">
+				<button name="button-show" type="button">
+					<?php echo esc_html($show_content); ?>
+				</button>
+				<button name="button-hide" type="button">
+					<?php echo esc_html($hide_content); ?>
+				</button>						
+				</span>
+			</p>
+			<?php 
+				}
+			?>
+
 
 			<?php esc_html_e( "Button Text", 'hidden-stuff' ); ?>
 			<select id="hidden_stuff_text" name="hidden_stuff_text">

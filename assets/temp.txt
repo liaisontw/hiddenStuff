@@ -1,0 +1,28 @@
+<?php 
+				for ($i=1; $i<4; $i++) {
+				
+			?>		
+			<p>
+				<span class="hidden-show-<?php $i ?>" id="hidden-show">
+				<input type="radio" id="buttonType-<?php $i ?>"
+					name="hidden_stuff_button_type" 
+					value="<?php
+							if ($i == $hidden_stuff_button_type) {
+						    	echo esc_html('" checked/>');
+							} else {
+								echo esc_html('" />');
+							}
+							?>
+					<label for="">
+						<button name="button-show" type="button">
+							<?php echo esc_html($show_content); ?>
+						</button>
+						<button name="button-hide" type="button">
+							<?php echo esc_html($hide_content); ?>
+						</button>						
+					</label>
+				</span></p>
+			
+			<?php 
+				}
+			?>
