@@ -101,12 +101,12 @@ class hidden_Stuff_Public {
 	}
 
 	public function init_hidden_stuff() {
-        add_shortcode( 'show-content', array($this, 'hidden_stuff_show_content') );
-        add_shortcode( 'hide-content', array($this, 'hidden_stuff_hide_content') );
+        add_shortcode( 'collexpander-show-content', array($this, 'hidden_stuff_show_content') );
+        add_shortcode( 'collexpander-hide-content', array($this, 'hidden_stuff_hide_content') );
 	}
 
 	/**
-     * [show-content]
+     * [collexpander-show-content]
      *
      * @since    1.0.0
      */
@@ -139,7 +139,7 @@ class hidden_Stuff_Public {
 	}
 
 	/**
-     * [hide-content]
+     * [collexpander-hide-content]
      *
      * @since    1.0.0
      */

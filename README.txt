@@ -1,42 +1,40 @@
-=== hidden Stuff ===
+=== collexpander ===
 Contributors: Liaison  
 Donate link:   
-Tags: hidden
+Tags: hide, show, collapse, expand
 Requires at least: 6.8  
 Tested up to: 6.8 
 Stable tag: 1.0.0
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
-hiddenStuff plugin replaces the ellipsis (...) with a 
-custom text string with selected padding. 
-Not compatible with all themes.
+collexpander plugin hide or show text with a toggle button to swtich.
+
 
 
 == Description ==
-hiddenStuff plugin replaces the ellipsis (...) with a 
-custom text string (length less than 50, including space) 
-with selected padding (To replace space). The hidden string
-is easily broken in many themes if the hidden string contains
-space. Not compatible with all themes.
+collexpander plugin hide or show text with a toggle button to swtich.
+Insert the [collexpander-show-content] shortcode where you want to hide content, 
+followed by [collexpander-hide-content].
+There are 3 button styles and 2 button text options.
 
 
 == Build Status ==
 
 
 == Development ==
-[hiddenStuff](https://github.com/liaisontw/hiddenStuff)  
+[collexpander](https://github.com/liaisontw/hiddenStuff)  
 
 
 == Installation ==  
 
 For an automatic installation through WordPress:
 1. Select Add New from the WordPress Plugins menu in the admin area.
-2. Search for 'hidden Stuff'.
+2. Search for 'collexpander'.
 3. Click Install Now, then Activate Plugin.
 
 For manual installation via FTP:
-1. Upload the 'hiddenstuff' folder to the '/wp-content/plugins/' directory.
+1. Upload the 'collexpander' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin from the 'Plugins' screen or 'Installed Plugins' menu in WordPress Dashboard.
 
 
@@ -46,10 +44,10 @@ For manual installation via FTP:
 
 == Screenshots ==  
 
-1. Dash-Board: Settings-hidden-Stuff.
-2. hiddenStuff_Setting_Panel
-3. Before-hiddenStuff.
-4. After-hiddenStuff.
+1. Dash-Board: Settings-collexpander.
+2. collexpander_Setting_Panel
+3. Before-collexpander.
+4. After-collexpander.
 
 == Changelog ==
 

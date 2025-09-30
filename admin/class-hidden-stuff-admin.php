@@ -109,10 +109,10 @@ class hidden_Stuff_Admin {
      */
 
 	public function admin_menu() {
-		add_options_page( 'hidden Stuff Options', 
-						  'hidden Stuff', 
+		add_options_page( 'collexpander Options', 
+						  'collexpander', 
 						  'manage_options', 
-						  'hidden_stuff_options', 
+						  'collexpander_options', 
 						  array(&$this, 'hidden_stuff_menu_options')				  
 		);
 	}
@@ -204,7 +204,7 @@ class hidden_Stuff_Admin {
 		<hr />
 		<p>
 			<strong style="font-size: 14px">Shortcode</strong><br/>
-			[show-content] The content to be hidden dynamically [hide-content]
+			[collexpander-show-content] The content to be hidden dynamically [collexpander-hide-content]
 		</p>
 		<hr />		
 		<form name="form1" method="post" action="">
@@ -244,13 +244,13 @@ class hidden_Stuff_Admin {
 			?>
 
 
-			<?php esc_html_e( "Button Text", 'hidden-stuff' ); ?>
+			<?php esc_html_e( "Button Text", 'collexpander' ); ?>
 			<select id="hidden_stuff_text" name="hidden_stuff_text">
 				<option value="Show Hide" <?php echo ($hidden_stuff_text=='Show Hide' ? 'selected' : ''); ?> >Show Hide</option>
 				<option value="More Less" <?php echo ($hidden_stuff_text=='More Less' ? 'selected' : ''); ?> >More Less</option>
 			</select>
 			<p class="submit">
-				<input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'hidden-stuff') ?>" />
+				<input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'collexpander') ?>" />
 			</p> 
 		
 		</form>   

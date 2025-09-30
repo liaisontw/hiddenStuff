@@ -13,15 +13,15 @@
  * @package           hidden_Stuff
  *
  * @wordpress-plugin
- * Plugin Name:       hidden Stuff
+ * Plugin Name:       collexpander
  * Plugin URI:        https://github.com/liaisontw/hiddenstuff
- * Description:       This is a description of the plugin.
+ * Description:       collexpander plugin hide or show text with a toggle button to swtich.
  * Version:           1.0.0
  * Author:            liason
  * Author URI:        https://github.com/liaisontw/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       hidden-stuff
+ * Text Domain:       collexpander
  * Domain Path:       /languages
  */
 
