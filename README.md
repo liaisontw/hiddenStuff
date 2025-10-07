@@ -19,12 +19,6 @@ followed by [collexpander-hide-content].
 There are 3 button styles and 2 button text options.
 
 
-== Build Status ==
-
-
-== Development ==
-[collexpander](https://github.com/liaisontw/hiddenStuff)  
-
 
 == Installation ==  
 
