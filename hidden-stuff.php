@@ -19,8 +19,8 @@
  * Version:           1.0.0
  * Author:            liason
  * Author URI:        https://github.com/liaisontw/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License: 		  GPLv3 or later  
+ * License URI: 	  https://www.gnu.org/licenses/gpl-3.0.html  
  * Text Domain:       collexpander
  * Domain Path:       /languages
  */

@@ -115,26 +115,20 @@ class hidden_Stuff_Public {
 		$hidden_stuff_text        = get_option( 'hidden_stuff_text' );
 		$button_text = explode(' ', $hidden_stuff_text);
 		$show_content = $button_text[0];
-
 		$hiddenShowDivId = wp_rand();
-		//$button .= 'id="button-'.$hiddenShowDivId.')">';
-		//$button .= 'onclick="hiddenShowToggle()">';
-		$button = '<button name="hidden-show" type="button" ';
-		$button .= 'onclick="hiddenShowToggle('.$hiddenShowDivId;
-		$button .= ')" id="button-'.$hiddenShowDivId.'">';
-		//$button .= 'Show';
-		$button .= $show_content;
-		$button .= '</button>';
 		$hidden_stuff_button_type = get_option('hidden_stuff_button_type');
-		$output = '<span class="hidden-show-'.$hidden_stuff_button_type.'"';
+		$button = '<button name="hidden-show" type="button" ';
+		$button .= 'onclick="hiddenShowToggle('.esc_html( $hiddenShowDivId );
+		$button .= ')" id="button-'.esc_html( $hiddenShowDivId ).'">';
+		$button .= esc_html( $show_content );
+		$button .= '</button>';
+		
+		$output = '<span class="hidden-show-'.esc_html( $hidden_stuff_button_type ).'"';
 		$output .= ' id="hidden-show-wrap">';
 		$output .= $button;
 		$output .= '</span>';
-		$output .= '<div id="hiddenShowDiv-'.$hiddenShowDivId.'" style="display: none">';
-		//$output .= '<div id="hiddenShowDiv" style="display: none">';
-		
+		$output .= '<div id="hiddenShowDiv-'.esc_html( $hiddenShowDivId ).'" style="display: none">';
 
-		// Return the output.
         return $output;
 	}
 

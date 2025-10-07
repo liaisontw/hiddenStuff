@@ -5,26 +5,29 @@ Tags: hide, show, collapse, expand
 Requires at least: 6.8  
 Tested up to: 6.8 
 Stable tag: 1.0.0
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+License: GPLv3 or later  
+License URI: https://www.gnu.org/licenses/gpl-3.0.html  
 
-collexpander plugin hide or show text with a toggle button to swtich.
+The Collexpander WordPress plugin allows you to hide or show selected text content dynamically with a toggle button.
 
 
 
 == Description ==
-collexpander plugin hide or show text with a toggle button to swtich.
-Insert the [collexpander-show-content] shortcode where you want to hide content, 
-followed by [collexpander-hide-content].
-There are 3 button styles and 2 button text options.
+The Collexpander WordPress plugin allows you to hide or show selected text content dynamically with a toggle button.
+It’s useful when you want to display long descriptions, FAQs, technical documentation, or additional product details without overwhelming the reader.
 
+Simply insert the shortcode pair in your post or page:
 
-== Build Status ==
+[collexpander-show-content]
+    <!-- Your collapsible content here -->
+[collexpander-hide-content]
 
+Everything placed between the two shortcodes will be initially hidden, and can be expanded or collapsed when the visitor clicks the toggle button.
 
-== Development ==
-[collexpander](https://github.com/liaisontw/hiddenStuff)  
+The plugin includes three customizable button styles (default, outline, and minimal) and two button text options (e.g., “Show” / “Hide” or “More” / “Less”).
+You can also easily adjust button labels, colors.
 
+This plugin helps improve content readability and provides a clean, user-friendly experience — ideal for blogs, product pages, FAQs, and educational content where text organization and clarity matter.
 
 == Installation ==  
 
