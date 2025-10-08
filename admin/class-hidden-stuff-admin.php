@@ -124,6 +124,7 @@ class hidden_Stuff_Admin
         $hidden_stuff_active      = get_option('hidden_stuff_active');
         $hidden_stuff_text        = get_option('hidden_stuff_text');
         $hidden_stuff_button_type = get_option('hidden_stuff_button_type');
+		
         if (!$hidden_stuff_active) {
             $hidden_stuff_active      = 'yes';
         }
@@ -171,7 +172,7 @@ class hidden_Stuff_Admin
                 }
             }
         }
-
+		
 
         $hidden_stuff_button_type = get_option('hidden_stuff_button_type');
         $hidden_stuff_text        = get_option('hidden_stuff_text');
@@ -179,6 +180,7 @@ class hidden_Stuff_Admin
         $show_content = $button_text[0];
         $hide_content = $button_text[1];
 
+		
         ?>
 
 <div class="wrap" id="hidden_stuff">
@@ -199,19 +201,17 @@ class hidden_Stuff_Admin
                 
             <?php
             for ($i = 1; $i < 4; $i++) {
+					if ($i == $hidden_stuff_button_type) {
+						$checked = ' checked ';
+					} else {
+						$checked = ' ';
+					}
                 ?>      
             <p>
                 <span class="hidden-show-<?php echo esc_attr($i);?>" id="hidden-show">
                 <input type="radio" id="buttonType-<?php echo esc_attr($i);?>"  
-                    name="hidden_stuff_button_type" value="
-                <?php
-                if ($i == $hidden_stuff_button_type) {
-                    echo esc_html('" checked/>');
-                } else {
-                    echo esc_html('" />');
-                }
-                ?>
-                ">
+                    name="hidden_stuff_button_type" 
+					value="<?php echo esc_attr($i);?>" <?php echo esc_html($checked);?>/>
                 <button name="button-show" type="button">
                     <?php echo esc_html($show_content); ?>
                 </button>
@@ -231,7 +231,9 @@ class hidden_Stuff_Admin
                 <option value="More Less" <?php echo ($hidden_stuff_text == 'More Less' ? 'selected' : ''); ?> >More Less</option>
             </select>
             <p class="submit">
-                <input type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e('Save Changes', 'collexpander') ?>" />
+                <input type="submit" name="submit" class="button button-primary" 
+					value="<?php esc_attr_e('Save Changes', 'collexpander') ?>
+				" />
             </p> 
         
         </form>   
