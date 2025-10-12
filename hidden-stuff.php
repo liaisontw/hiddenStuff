@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       collexpander
  * Plugin URI:        https://github.com/liaisontw/hiddenstuff
- * Description:       collexpander plugin hide or show text with a toggle button to swtich.
+ * Description:       The Collexpander WordPress plugin allows you to hide or show selected text content dynamically with a toggle button.
  * Version:           1.0.0
  * Author:            liason
  * Author URI:        https://github.com/liaisontw/
